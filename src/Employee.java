@@ -1,3 +1,5 @@
+import exception.NegativeSalaryValue;
+
 import java.util.Objects;
 
 public class Employee {
@@ -40,7 +42,7 @@ public class Employee {
 
     private void verifySalary(double salary) {
         if (salary < 0) {
-            throw new IllegalArgumentException("O salário não pode ser negativo");
+            throw new NegativeSalaryValue("O salário não pode ser negativo");
         }
     }
 

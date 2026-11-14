@@ -1,3 +1,5 @@
+import exception.NegativeSalaryValue;
+
 void main() {
     EmployeeManager employeeManager = new EmployeeManager();
 
@@ -25,7 +27,10 @@ void main() {
                     System.out.println("Digite o cargo do funcionário (DEVELOPER, PRODUCT_MANAGER, DEVOPS_ENGINEER):");
                     Role role = Role.valueOf(scanner.next().toUpperCase());
                     employeeManager.addEmployee(name, baseSalary, role);
-                } catch (IllegalArgumentException e) {
+                } catch (NegativeSalaryValue e) {
+                    System.out.println("Erro: " + e.getMessage());
+                }
+                catch (IllegalArgumentException e) {
                     System.out.println("Erro: Entrada inválida. Por favor, insira um cargo válido (DEVELOPER, PRODUCT_MANAGER, DEVOPS_ENGINEER).");
                 } catch (InputMismatchException e) {
                     System.out.println("Erro: Entrada inválida. Por favor, insira um número para o salário.");
