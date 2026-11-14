@@ -17,13 +17,21 @@ void main() {
         option = scanner.nextInt();
         switch (option) {
             case 1:
-                System.out.println("Digite o nome do funcionário:");
-                String name = scanner.next();
-                System.out.println("Digite o salário base do funcionário:");
-                double baseSalary = scanner.nextDouble();
-                System.out.println("Digite o cargo do funcionário (DEVELOPER, PRODUCT_MANAGER, DEVOPS_ENGINEER):");
-                Role role = Role.valueOf(scanner.next().toUpperCase());
-                employeeManager.addEmployee(name, baseSalary, role);
+                try {
+                    System.out.println("Digite o nome do funcionário:");
+                    String name = scanner.next();
+                    System.out.println("Digite o salário base do funcionário:");
+                    double baseSalary = scanner.nextDouble();
+                    System.out.println("Digite o cargo do funcionário (DEVELOPER, PRODUCT_MANAGER, DEVOPS_ENGINEER):");
+                    Role role = Role.valueOf(scanner.next().toUpperCase());
+                    employeeManager.addEmployee(name, baseSalary, role);
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Erro: Entrada inválida. Por favor, insira um cargo válido (DEVELOPER, PRODUCT_MANAGER, DEVOPS_ENGINEER).");
+                } catch (InputMismatchException e) {
+                    System.out.println("Erro: Entrada inválida. Por favor, insira um número para o salário.");
+                } catch (NoSuchElementException e) {
+                    System.out.println("Erro: " + e.getMessage());
+                }
                 break;
 //            case 2:
 //                employeeManager.listEmployees();
