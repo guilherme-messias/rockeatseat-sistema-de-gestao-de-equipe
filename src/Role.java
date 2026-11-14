@@ -1,4 +1,4 @@
-public enum JobTitle {
+public enum Role {
     DEVELOPER,
     PRODUCT_MANAGER,
     DEVOPS_ENGINEER;
