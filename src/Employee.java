@@ -40,7 +40,7 @@ public class Employee {
 
     private void verifySalary(double salary) {
         if (salary < 0) {
-            throw new IllegalArgumentException("Salary cannot be negative");
+            throw new IllegalArgumentException("O salário não pode ser negativo");
         }
     }
 
@@ -58,6 +58,6 @@ public class Employee {
 
     @Override
     public String toString() {
-        return String.format("Employee{name='%s', baseSalary=%.2f, role=%s}", name, baseSalary, role);
+        return String.format("Funcionário{Nome='%s', Salário Base =%.2f, Cargo=%s}", name, baseSalary, role);
     }
 }
