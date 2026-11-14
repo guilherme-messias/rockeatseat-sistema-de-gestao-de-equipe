@@ -1,7 +1,7 @@
 void main() {
-    IO.println(String.format("Hello and welcome!"));
+    List<Employee> employees = new ArrayList<>();
 
-    for (int i = 1; i <= 5; i++) {
-        IO.println("i = " + i);
-    }
+    Scanner scanner = new Scanner(System.in);
+
+    scanner.close();
 }
