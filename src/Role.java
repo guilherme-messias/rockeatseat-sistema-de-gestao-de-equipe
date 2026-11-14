@@ -12,7 +12,7 @@ public enum Role {
             case DEVOPS_ENGINEER:
                 return baseSalary * 0.15; // 15% bonus for DevOps engineers
             default:
-                throw new IllegalArgumentException("Unknown job title: " + this);
+                throw new IllegalArgumentException("Cargo desconhecido: " + this);
         }
 
     }
