@@ -21,7 +21,7 @@ void main() {
             case 1: {
                 try {
                     System.out.println("Digite o nome do funcionário:");
-                    String name = scanner.next();
+                    String name = scanner.nextLine();
                     System.out.println("Digite o salário base do funcionário:");
                     double baseSalary = scanner.nextDouble();
                     System.out.println("Digite o cargo do funcionário (DEVELOPER, PRODUCT_MANAGER, DEVOPS_ENGINEER):");
@@ -56,7 +56,7 @@ void main() {
             }
             case 6: {
                 System.out.println("Digite o nome do funcionário que deseja buscar:");
-                String searchName = scanner.next();
+                String searchName = scanner.nextLine();
                 employeeManager.searchEmployeeByName(searchName);
                 break;
             }
