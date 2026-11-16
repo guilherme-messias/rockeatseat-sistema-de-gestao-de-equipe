@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EmployeeManager {
     private List<Employee> employees = new ArrayList<>();
@@ -49,6 +51,40 @@ public class EmployeeManager {
             System.out.println("Funcionário com maior salário:");
             System.out.println("Nome: " + highestSalaryEmployee.getName());
             System.out.println("Salário Final: " + calculateFinalSalary(highestSalaryEmployee));
+        }
+    }
+
+    public void displayEmployeeCountByRole() {
+        Map<Role, Integer> roleCountMap = new HashMap<>();
+        if (employees.isEmpty()) {
+            System.out.println("Nenhum funcionário cadastrado.");
+        } else {
+            int developerCount = 0;
+            int productManagerCount = 0;
+            int devOpsEngineerCount = 0;
+
+            for (Employee employee : employees) {
+                switch (employee.getRole()) {
+                    case DEVELOPER:
+                        developerCount++;
+                        break;
+                    case PRODUCT_MANAGER:
+                        productManagerCount++;
+                        break;
+                    case DEVOPS_ENGINEER:
+                        devOpsEngineerCount++;
+                        break;
+                }
+            }
+
+            roleCountMap.put(Role.DEVELOPER, developerCount);
+            roleCountMap.put(Role.PRODUCT_MANAGER, productManagerCount);
+            roleCountMap.put(Role.DEVOPS_ENGINEER, devOpsEngineerCount);
+
+            System.out.println("Quantidade de funcionários por cargo:");
+            System.out.println("Desenvolvedores: " + roleCountMap.getOrDefault(Role.DEVELOPER, 0));
+            System.out.println("Gerentes de Produto: " + roleCountMap.getOrDefault(Role.PRODUCT_MANAGER, 0));
+            System.out.println("Engenheiros DevOps: " + roleCountMap.getOrDefault(Role.DEVOPS_ENGINEER, 0));
         }
     }
 

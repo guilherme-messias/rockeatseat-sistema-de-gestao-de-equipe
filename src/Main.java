@@ -51,9 +51,10 @@ void main() {
                 employeeManager.displayHighestSalaryEmployee();
                 break;
             }
-//            case 5:
-//                employeeManager.displayEmployeeCountByRole();
-//                break;
+            case 5: {
+                employeeManager.displayEmployeeCountByRole();
+                break;
+            }
 //            case 6:
 //                System.out.println("Digite o nome do funcionário que deseja buscar:");
 //                String searchName = scanner.next();
