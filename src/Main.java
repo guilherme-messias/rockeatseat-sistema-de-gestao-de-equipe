@@ -47,9 +47,10 @@ void main() {
                 employeeManager.displayFinalSalaries();
                 break;
             }
-//            case 4:
-//                employeeManager.displayHighestSalaryEmployee();
-//                break;
+            case 4: {
+                employeeManager.displayHighestSalaryEmployee();
+                break;
+            }
 //            case 5:
 //                employeeManager.displayEmployeeCountByRole();
 //                break;

@@ -30,10 +30,30 @@ public class EmployeeManager {
         } else {
             System.out.println("Salários finais dos funcionários:");
             for (Employee employee : employees) {
-                double bonus = employee.getRole().calculateBonus(employee.getBaseSalary());
-                double finalSalary = employee.getBaseSalary() + bonus;
+                double finalSalary = calculateFinalSalary(employee);
                 System.out.println("Nome: " + employee.getName() + " - Salário Final: " + finalSalary);
             }
         }
+    }
+
+    public void displayHighestSalaryEmployee() {
+        if (employees.isEmpty()) {
+            System.out.println("Nenhum funcionário cadastrado.");
+        } else {
+            Employee highestSalaryEmployee = employees.get(0);
+            for (Employee employee : employees) {
+                if (calculateFinalSalary(employee) > calculateFinalSalary(highestSalaryEmployee)) {
+                    highestSalaryEmployee = employee;
+                }
+            }
+            System.out.println("Funcionário com maior salário:");
+            System.out.println("Nome: " + highestSalaryEmployee.getName());
+            System.out.println("Salário Final: " + calculateFinalSalary(highestSalaryEmployee));
+        }
+    }
+
+    private double calculateFinalSalary(Employee employee) {
+        double bonus = employee.getRole().calculateBonus(employee.getBaseSalary());
+        return employee.getBaseSalary() + bonus;
     }
 }
