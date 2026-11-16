@@ -38,9 +38,9 @@ void main() {
                     System.out.println("Erro: " + e.getMessage());
                 }
                 break;
-//            case 2:
-//                employeeManager.listEmployees();
-//                break;
+            case 2:
+                employeeManager.listEmployees();
+                break;
 //            case 3:
 //                employeeManager.displayFinalSalaries();
 //                break;
