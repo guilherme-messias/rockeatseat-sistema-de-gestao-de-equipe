@@ -67,19 +67,18 @@ public class EmployeeManager {
                 switch (employee.getRole()) {
                     case DEVELOPER:
                         developerCount++;
+                        roleCountMap.put(Role.DEVELOPER, developerCount);
                         break;
                     case PRODUCT_MANAGER:
                         productManagerCount++;
+                        roleCountMap.put(Role.PRODUCT_MANAGER, productManagerCount);
                         break;
                     case DEVOPS_ENGINEER:
                         devOpsEngineerCount++;
+                        roleCountMap.put(Role.DEVOPS_ENGINEER, devOpsEngineerCount);
                         break;
                 }
             }
-
-            roleCountMap.put(Role.DEVELOPER, developerCount);
-            roleCountMap.put(Role.PRODUCT_MANAGER, productManagerCount);
-            roleCountMap.put(Role.DEVOPS_ENGINEER, devOpsEngineerCount);
 
             System.out.println("Quantidade de funcionários por cargo:");
             System.out.println("Desenvolvedores: " + roleCountMap.getOrDefault(Role.DEVELOPER, 0));
