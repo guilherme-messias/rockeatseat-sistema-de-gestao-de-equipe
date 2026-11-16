@@ -1,10 +1,11 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.NumberFormat;
+import java.util.*;
 
 public class EmployeeManager {
     private List<Employee> employees = new ArrayList<>();
+
+    Locale locale = new Locale("pt", "BR");
+    NumberFormat numberFormat = NumberFormat.getCurrencyInstance(locale);
 
     public void addEmployee(String name, double baseSalary, Role role) {
         Employee employee = new Employee(name, baseSalary, role);
@@ -19,7 +20,7 @@ public class EmployeeManager {
             System.out.println("Lista de funcionários:");
             for (Employee employee : employees) {
                 System.out.println("Nome: " + employee.getName());
-                System.out.println("Salário Base: " + employee.getBaseSalary());
+                System.out.println("Salário Base: " + numberFormat.format(employee.getBaseSalary()));
                 System.out.println("Cargo: " + employee.getRole());
                 System.out.println("-------------------------");
             }
@@ -33,7 +34,7 @@ public class EmployeeManager {
             System.out.println("Salários finais dos funcionários:");
             for (Employee employee : employees) {
                 double finalSalary = calculateFinalSalary(employee);
-                System.out.println("Nome: " + employee.getName() + " - Salário Final: " + finalSalary);
+                System.out.println("Nome: " + employee.getName() + " - Salário Final: " + numberFormat.format(finalSalary));
             }
         }
     }
@@ -50,7 +51,7 @@ public class EmployeeManager {
             }
             System.out.println("Funcionário com maior salário:");
             System.out.println("Nome: " + highestSalaryEmployee.getName());
-            System.out.println("Salário Final: " + calculateFinalSalary(highestSalaryEmployee));
+            System.out.println("Salário Final: " + numberFormat.format(calculateFinalSalary(highestSalaryEmployee)));
         }
     }
 
@@ -93,7 +94,7 @@ public class EmployeeManager {
             if (employee.getName().equals(name)) {
                 System.out.println("Funcionário encontrado:");
                 System.out.println("Nome: " + employee.getName());
-                System.out.println("Salário Base: " + employee.getBaseSalary());
+                System.out.println("Salário Base: " + numberFormat.format(employee.getBaseSalary()));
                 System.out.println("Cargo: " + employee.getRole());
                 found = true;
                 break;
