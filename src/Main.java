@@ -29,8 +29,7 @@ void main() {
                     employeeManager.addEmployee(name, baseSalary, role);
                 } catch (NegativeSalaryValue e) {
                     System.out.println("Erro: " + e.getMessage());
-                }
-                catch (IllegalArgumentException e) {
+                } catch (IllegalArgumentException e) {
                     System.out.println("Erro: Entrada inválida. Por favor, insira um cargo válido (DEVELOPER, PRODUCT_MANAGER, DEVOPS_ENGINEER).");
                 } catch (InputMismatchException e) {
                     System.out.println("Erro: Entrada inválida. Por favor, insira um número para o salário.");
@@ -55,22 +54,22 @@ void main() {
                 employeeManager.displayEmployeeCountByRole();
                 break;
             }
-//            case 6:
-//                System.out.println("Digite o nome do funcionário que deseja buscar:");
-//                String searchName = scanner.next();
-//                employeeManager.searchEmployeeByName(searchName);
-//                break;
-            case 7:
+            case 6: {
+                System.out.println("Digite o nome do funcionário que deseja buscar:");
+                String searchName = scanner.next();
+                employeeManager.searchEmployeeByName(searchName);
+                break;
+            }
+            case 7: {
                 System.out.println("Saindo do sistema...");
                 break;
-            default:
+            }
+            default: {
                 System.out.println("Opção inválida. Tente novamente.");
                 break;
+            }
         }
-
-        }while (option != 7);
-
-
+    } while (option != 7) ;
     scanner.close();
     }
 

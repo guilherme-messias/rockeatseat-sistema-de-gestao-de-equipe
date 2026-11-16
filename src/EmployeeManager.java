@@ -88,6 +88,23 @@ public class EmployeeManager {
         }
     }
 
+    public void searchEmployeeByName(String name) {
+        boolean found = false;
+        for (Employee employee : employees) {
+            if (employee.getName().equals(name)) {
+                System.out.println("Funcionário encontrado:");
+                System.out.println("Nome: " + employee.getName());
+                System.out.println("Salário Base: " + employee.getBaseSalary());
+                System.out.println("Cargo: " + employee.getRole());
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("Funcionário não encontrado.");
+        }
+    }
+
     private double calculateFinalSalary(Employee employee) {
         double bonus = employee.getRole().calculateBonus(employee.getBaseSalary());
         return employee.getBaseSalary() + bonus;
