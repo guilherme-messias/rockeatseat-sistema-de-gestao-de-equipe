@@ -18,7 +18,7 @@ void main() {
 
         option = scanner.nextInt();
         switch (option) {
-            case 1:
+            case 1: {
                 try {
                     System.out.println("Digite o nome do funcionário:");
                     String name = scanner.next();
@@ -38,12 +38,15 @@ void main() {
                     System.out.println("Erro: " + e.getMessage());
                 }
                 break;
-            case 2:
+            }
+            case 2: {
                 employeeManager.listEmployees();
                 break;
-//            case 3:
-//                employeeManager.displayFinalSalaries();
-//                break;
+            }
+            case 3: {
+                employeeManager.displayFinalSalaries();
+                break;
+            }
 //            case 4:
 //                employeeManager.displayHighestSalaryEmployee();
 //                break;

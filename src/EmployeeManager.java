@@ -23,4 +23,17 @@ public class EmployeeManager {
             }
         }
     }
+
+    public void displayFinalSalaries() {
+        if (employees.isEmpty()) {
+            System.out.println("Nenhum funcionário cadastrado.");
+        } else {
+            System.out.println("Salários finais dos funcionários:");
+            for (Employee employee : employees) {
+                double bonus = employee.getRole().calculateBonus(employee.getBaseSalary());
+                double finalSalary = employee.getBaseSalary() + bonus;
+                System.out.println("Nome: " + employee.getName() + " - Salário Final: " + finalSalary);
+            }
+        }
+    }
 }
